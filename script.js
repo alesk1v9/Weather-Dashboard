@@ -106,6 +106,13 @@ document.addEventListener('DOMContentLoaded', function() {
         displaySavedCities();
     }
 
-// Fetch weather for the current city
-// Save the city in the recently searched list
+    document.querySelector('button').addEventListener('click', function() {
+        var cityInput = document.getElementById('cityInput').value;
+        if (cityInput.trim() !== '') {
+            // Fetch weather for the current city
+            fetchWeather(cityInput);
+            // Save the city in the recently searched list
+            saveCity(cityInput);
+        }
+    });
 });
